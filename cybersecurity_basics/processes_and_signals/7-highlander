@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
-# it is a naughty script
+# This script loops indefinitely and traps SIGTERM
+
 trap 'echo "I am invincible!!!"; exit' SIGTERM
-while true
-do
-	echo "To infinity and beyond"
-	sleep 2
+
+while true; do
+    echo "To infinity and beyond"
+    # Sleep in the background and wait for it
+    # This allows the shell to catch the trap immediately
+    sleep 2 &
+    wait $!
 done
