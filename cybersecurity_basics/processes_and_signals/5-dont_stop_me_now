@@ -1,3 +1,9 @@
 #!/usr/bin/env bash
 #This is stops previous script
-kill $(ps aux | grep "[4]-to_infinity_and_beyond" | awk '{print $2}')
+target_pid=$(pgrep -f "4-to_infinity_and_beyond")
+if [ -n "$target_pid" ]; then
+    kill "$target_pid"
+    echo "Process $target_pid (4-to_infinity_and_beyond) has been stopped."
+else
+    echo "Process not found."
+fi
