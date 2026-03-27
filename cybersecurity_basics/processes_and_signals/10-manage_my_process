@@ -4,21 +4,21 @@
 start() {
     ./manage_my_process &
     echo $! > /tmp/my_process.pid
-    echo "manage_my_process started"
 }
 
 stop() {
     kill "$(cat /tmp/my_process.pid)"
     rm -f /tmp/my_process.pid
-    echo "manage_my_process stopped"
 }
 
 case "$1" in
     start)
         start
+        echo "manage_my_process started"
         ;;
     stop)
         stop
+        echo "manage_my_process stopped"
         ;;
     restart)
         stop
