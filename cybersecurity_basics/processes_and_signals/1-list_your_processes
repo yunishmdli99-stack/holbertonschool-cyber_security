@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#this is showing all processes verbosely
+ps auxf
