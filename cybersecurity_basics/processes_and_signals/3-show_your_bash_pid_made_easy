@@ -1,11 +1,18 @@
 #!/usr/bin/env bash
 # this script lists processes in a more easy way
-for pid_dir in /proc/[0-9]*/; do
-    pid=$(basename "$pid_dir")   
-    if [ -f "${pid_dir}comm" ]; then
-        proc_name=$(cat "${pid_dir}comm" 2>/dev/null)       
-        if [[ "$proc_name" == *"bash"* ]]; then
-            echo -e "$pid\t$proc_name"
-        fi
+for pid_dir in /proc/[0-9]*; do
+    # Extract just the number from the path /proc/1234
+    pid=${pid_dir#/proc/}
+    
+    # Check if the comm file exists
+    if [ -f "$pid_dir/comm" ]; then
+        proc_name=$(cat "$pid_dir/comm")
+        
+        # Look for 'bash' in the process name
+        case "$proc_name" in
+            *bash*)
+                echo "$pid $proc_name"
+                ;;
+        esac
     fi
 done
