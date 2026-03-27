@@ -1,11 +1,3 @@
 #!/usr/bin/env bash
 #This is stops previous script
-target_pid=$(ps aux | grep "[4]-to_infinity_and_beyond" | awk '{print $2}')
-
-if [ -n "$target_pid" ]; then
-    # -9 is the 'Force Kill' signal
-    kill -9 "$target_pid"
-    echo "Process $target_pid has been forcefully terminated."
-else
-    echo "Process '4-to_infinity_and_beyond' was not found."
-fi
+pkill -f "4-to_infinity_and_beyond"
