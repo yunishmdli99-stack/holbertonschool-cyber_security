@@ -1,8 +1,8 @@
-#!/usr/bin/env bash
-# Handle SIGTERM
-trap 'echo "I am invincible!!!"; exit 0' SIGTERM SIGINT
+#!/bin/bash
+
+trap 'echo "I am invincible!!!"' SIGTERM
 
 while true; do
-  echo "to infinity and beyond"
+  echo "To infinity and beyond"
   sleep 2
 done
