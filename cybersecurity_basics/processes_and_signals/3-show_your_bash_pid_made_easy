@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# this script lists processes in a more easy way
+for pid_dir in /proc/[0-9]*/; do
+    pid=$(basename "$pid_dir")   
+    if [ -f "${pid_dir}comm" ]; then
+        proc_name=$(cat "${pid_dir}comm" 2>/dev/null)       
+        if [[ "$proc_name" == *"bash"* ]]; then
+            echo -e "$pid\t$proc_name"
+        fi
+    fi
+done
