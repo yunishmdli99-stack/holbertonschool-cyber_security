@@ -1,16 +1,9 @@
 #!/usr/bin/env bash
-# This script traps the SIGTERM signal
 
-# 1. Define the trap
-# When SIGTERM is received, echo the message and then exit
-trap 'echo "I am invincible!!!"; exit' SIGTERM
+# Handle SIGTERM
+trap 'echo "I am invincible!!!"; exit 0' SIGTERM
 
-# 2. Start the loop
 while true; do
-    echo "To infinity and beyond"
-    # We put sleep in the background (&) and 'wait' for it ($!)
-    # This allows the shell to process the trap IMMEDIATELY 
-    # rather than waiting for the 2-second sleep to finish.
-    sleep 2 &
-    wait $!
+  echo "to infinity and beyond"
+  sleep 2
 done
