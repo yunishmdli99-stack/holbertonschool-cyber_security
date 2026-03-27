@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 # Handle SIGTERM
 trap 'echo "I am invincible!!!"; exit 0' SIGTERM
 
