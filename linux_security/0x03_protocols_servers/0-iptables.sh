@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo iptables -L --line-numbers -v
+iptables -L --line-numbers -v
