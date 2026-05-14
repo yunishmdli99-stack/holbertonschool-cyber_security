@@ -1,2 +1,2 @@
 #!/bin/bash
-grep -vP "^#\|^$" /etc/ssh/sshd_config
+grep -vP "^#|^$" /etc/ssh/sshd_config
