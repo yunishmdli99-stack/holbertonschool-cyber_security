@@ -1,2 +1,2 @@
 #!/bin/bash
-[ "$EUID" -ne 0 ] && echo "Please run as root/sudo." && exit 1 || last -n 5 | grep -vE '(reboot|shutdown|^$)'
+if [ "$EUID" -eq 0 ]; then last -n 5 | grep "$1"; else echo "Run as root"; fi
