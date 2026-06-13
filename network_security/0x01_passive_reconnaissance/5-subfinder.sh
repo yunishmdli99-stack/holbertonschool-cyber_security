@@ -1,2 +1,2 @@
 #!/bin/bash
-subfinder -d $1 -silent -o $1.txt -oJ=false -csv -ip && cat $1.txt | cut -d',' -f1
+subfinder -d $1 -silent -nW -ol -o $1.txt
