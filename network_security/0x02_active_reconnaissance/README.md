@@ -1,0 +1,1 @@
+yaziklar olsun sana
