@@ -1,2 +1,2 @@
 #!/bin/bash
-subfinder -d $1 -silent -ip -csv -o $1.txt && cat $1.txt | awk -F',' '{print $1}'
+subfinder -d $1 -silent -ip -oI -o $1.txt && cat $1.txt | cut -d',' -f1
