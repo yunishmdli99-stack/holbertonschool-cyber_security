@@ -1,2 +1,2 @@
 #!/bin/bash
-john --wordlist=/usr/share/wordlists/rockyou.txt $1 | tee 4-password.txt
+john --wordlist=/usr/share/wordlists/rockyou.txt $1 | tee 4-password.txt | grep -oP '(?<=\().*(?=\))'
