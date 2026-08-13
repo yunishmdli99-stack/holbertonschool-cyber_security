@@ -1,2 +1,2 @@
 #!/bin/bash
-grep -c "firewall" auth.log
+grep -c "iptables -A" auth.log
