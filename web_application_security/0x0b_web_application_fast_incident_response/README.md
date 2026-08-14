@@ -1,0 +1,1 @@
+colkaloyobu tolkabudi lasto destimo
