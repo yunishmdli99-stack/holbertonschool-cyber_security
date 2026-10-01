@@ -1,2 +1,1 @@
-# holbertonschool-cyber_security
-Pimopen pencereye adini veren
+Ismayil bunu gorse idi bilmeyecekdi
